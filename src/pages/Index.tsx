@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
-import { Martini, Database, Upload, Star } from "lucide-react";
+import { Martini, Database, Upload } from "lucide-react";
 import ReviewForm from "@/components/ReviewForm";
 import ReviewList from "@/components/ReviewList";
 import ImportExport from "@/components/ImportExport";
-import RatingVariations from "@/components/RatingVariations";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("log");
@@ -33,7 +32,7 @@ const Index = () => {
       <main className="container mx-auto px-4 py-6 max-w-5xl">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           {/* Tab Navigation */}
-          <TabsList className="grid w-full grid-cols-4 mb-6 h-auto p-1 bg-card shadow-card">
+          <TabsList className="grid w-full grid-cols-3 mb-6 h-auto p-1 bg-card shadow-card">
             <TabsTrigger
               value="log"
               className="data-[state=active]:bg-gradient-primary data-[state=active]:text-white data-[state=active]:shadow-button py-3 rounded-lg font-medium transition-all"
@@ -55,13 +54,6 @@ const Index = () => {
               <Upload className="w-4 h-4 mr-2" />
               Import/Export
             </TabsTrigger>
-            <TabsTrigger
-              value="ratings"
-              className="data-[state=active]:bg-gradient-primary data-[state=active]:text-white data-[state=active]:shadow-button py-3 rounded-lg font-medium transition-all"
-            >
-              <Star className="w-4 h-4 mr-2" />
-              Rating Ideas
-            </TabsTrigger>
           </TabsList>
 
           {/* Tab Content */}
@@ -80,12 +72,6 @@ const Index = () => {
           <TabsContent value="data" className="mt-0">
             <Card className="p-6 shadow-card border-2">
               <ImportExport />
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="ratings" className="mt-0">
-            <Card className="p-6 shadow-card border-2">
-              <RatingVariations />
             </Card>
           </TabsContent>
         </Tabs>
