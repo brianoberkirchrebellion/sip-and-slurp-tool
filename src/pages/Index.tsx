@@ -5,6 +5,7 @@ import { Martini, Database, Download, Upload } from "lucide-react";
 import ReviewForm from "@/components/ReviewForm";
 import ReviewList from "@/components/ReviewList";
 import ImportExport from "@/components/ImportExport";
+import RatingVariations from "@/components/RatingVariations";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("log");
